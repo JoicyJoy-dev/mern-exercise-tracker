@@ -17,7 +17,7 @@ export default class CreateUser extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://localhost:5000/users").then((res) => {
+    axios.get("https://mern-exercise-tracker2.herokuapp.com/users").then((res) => {
       this.setState({ users: res.data, isLoaded: true });
     });
   }
@@ -50,7 +50,7 @@ export default class CreateUser extends Component {
     console.log(user);
 
     axios
-      .post("http://localhost:5000/users/add", user)
+      .post("https://mern-exercise-tracker2.herokuapp.com/users/add", user)
       .then((res) => console.log(res.data));
 
     this.setState({

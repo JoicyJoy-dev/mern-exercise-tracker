@@ -25,7 +25,7 @@ constructor(props)
 
 componentDidMount()
 {
-axios.get('http://locslhost:5000/exercises/'+this.props.match.params.id)
+axios.get('https://mern-exercise-tracker2.herokuapp.com/exercises/'+this.props.match.params.id)
 .then(response=>{
     this.setState({
 username:response.data.username,
@@ -36,7 +36,7 @@ date:new Date(response.data.date)
 })
 .catch(error=>{console.log(error)})
 
-axios.get('http://localhost:5000/users').
+axios.get('https://mern-exercise-tracker2.herokuapp.com/users').
 then(resposnse=>{
     if(resposnse.data.length>0)
         {
@@ -91,7 +91,7 @@ onSubmit(e)
 
     console.log(exercise);
 
-axios.post('http://localhost:5000/exercises/update'+this.props.match.params.id,exercise)
+axios.post('https://mern-exercise-tracker2.herokuapp.com/exercises/update'+this.props.match.params.id,exercise)
 .then(res=>console.log(res.data));
 
     window.location='/';

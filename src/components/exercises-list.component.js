@@ -60,7 +60,7 @@ export default class ExercisesList extends Component {   /////// Class Component
 
   componentWillMount() {
     axios
-      .get("http://localhost:5000/exercises")
+      .get("https://mern-exercise-tracker2.herokuapp.com/exercises")
       .then((response) => {
         if (response.data.length > 0) {
           console.log(response.data);
@@ -75,7 +75,7 @@ export default class ExercisesList extends Component {   /////// Class Component
   }
 
   deleteExercise(id) {
-    axios.delete("http://localhost:5000/exercises/" + id).then((response) => {
+    axios.delete("https://mern-exercise-tracker2.herokuapp.com/exercises/" + id).then((response) => {
       console.log(response.data);
     });
 

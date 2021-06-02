@@ -25,7 +25,7 @@ constructor(props)
 
 componentDidMount()
 {
-axios.get('http://localhost:5000/users').
+axios.get('https://mern-exercise-tracker2.herokuapp.com/users').
 then(resposnse=>{
     if(resposnse.data.length>0)
         {
@@ -81,7 +81,7 @@ onSubmit(e)
 
     console.log(exercise);
 
-axios.post('http://localhost:5000/exercises/add',exercise)
+axios.post('https://mern-exercise-tracker2.herokuapp.com/exercises/add',exercise)
 .then(res=>console.log(res.data));
 
     window.location='/';
